@@ -1,0 +1,246 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  background-image: linear-gradient(#7267cb, #6e3cbc);
+  margin: 0%;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  height: 80px;
+  top: 0px;
+  background-image: linear-gradient(180deg, #7267cb 0%, #6e3cbc 752.66%);
+  display: inline-flex;
+  position: fixed;
+  z-index: 1;
+}
+
+.name-logo {
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 45px;
+
+  color: #fad101;
+}
+
+.img-logo {
+  align-items: center;
+  display: flex;
+  padding-left: 8px;
+  margin-top: 18px;
+}
+
+.menu {
+  margin-top: 28px;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu li ul {
+  display: none;
+  position: absolute;
+  min-width: 610px;
+  background-color: #7267cb;
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  width: 600px;
+  padding: 10px 0px 20px 30px;
+
+  color: #ffffff;
+}
+
+.menu li:hover > ul {
+  display: block;
+}
+
+.menu li ul li div a {
+  padding: 4px 8px;
+  font-size: 16px;
+  display: block;
+  text-align: left;
+}
+
+.menu li ul li div a:hover {
+  padding: 4px 8px;
+}
+
+.menu a {
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0px 24px;
+}
+
+.menu a:hover {
+  background-color: white;
+  color: #6e3cbc;
+  padding: 10px 24px;
+}
+
+.search {
+  width: 317px;
+  height: 38px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.26);
+  border: none;
+  right: 220px;
+  position: absolute;
+}
+
+.icon-search {
+  width: 24px;
+  height: 24px;
+  padding-left: 10px;
+  position: absolute;
+  margin-top: 7px;
+}
+
+.icon-search img {
+  width: 24px;
+  height: 24px;
+}
+
+.input {
+  background: rgba(255, 255, 255, 0);
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  position: absolute;
+  margin-top: 8px;
+  padding-left: 45px;
+  width: 250px;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.54);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.boton-log {
+  width: 120px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  outline: none;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  right: 45px;
+  position: absolute;
+  cursor: pointer;
+
+  color: #6e3cbc;
+}
+
+/* CONTENIDO */
+
+.pre-content {
+  margin-top: 100px;
+  height: 568px;
+}
+
+.content {
+  padding-top: 50px;
+  padding-left: 80px;
+  color: white;
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+}
+
+.content h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+}
+
+.content p {
+  font-weight: 350;
+  font-size: 20px;
+  line-height: 28px;
+  width: 560px;
+  letter-spacing: 0.02em;
+  padding: 10px 0px;
+}
+
+.download {
+  width: 135px;
+  height: 38px;
+  background: #b8e4f0;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.download a {
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 35px;
+  color: #6e3cbc;
+  text-decoration: none;
+  text-align: center;
+  padding: 9px 24px;
+}
+
+.telefono {
+  position: absolute;
+  right: 0%;
+  top: 90px;
+}
+
+.footer {
+  background: #525152;
+  height: 300px;
+  padding: 70px;
+}
+
+.fter-menu {
+  margin-top: 28px;
+  list-style-type: none;
+}
+
+.fter-menu li {
+  margin: 10px;
+  text-decoration: none;
+}
+
+.fter-menu a {
+  font-family: system-ui, sans-serif, Arial, Helvetica;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0px 24px;
+}

@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @deck.name
+%p
+  %b Description:
+  = @deck.description
+%p
+  %b Category:
+  = @deck.category
+
+%p
+  %b Category:
+  = @deck.id
+
+-# .cards-container
+-#   = simple_form_for Card.new, url: deck_cards_path(deck_id: @deck.id) do |f|
+-#     = f.input :question, label: false, placeholder: 'question', as: :string, input_html: { autocomplete: :off }
+-#     = f.input :description, label: false, placeholder: 'description', as: :string, input_html: { autocomplete: :off }
+
+= link_to 'Add Card', new_deck_card_path(@deck)
+\|
+= link_to 'Edit', edit_deck_path(@deck)
+\|
+= link_to 'Back', decks_path

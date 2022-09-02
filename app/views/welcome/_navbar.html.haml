@@ -1,0 +1,17 @@
+.container
+  .header
+    %h1.name-logo FlashCards
+    = image_tag 'juego-de-cartas.png', class: 'img-logo', width: 40, height: 40
+    %ul.menu
+      %li
+        %a Barajas
+      %li
+        %a{:href => "#"} Conctacto
+      %li
+        %a{:href => "#"} Descargar
+    .search
+      .icon-search
+        = image_tag 'icons8-búsqueda-48.png'
+      %input.input{:placeholder => "Buscar barajas", :type => "text"}/
+    = link_to new_user_session_path, method: :get, class: 'boton-log' do
+      Log in
