@@ -25,8 +25,8 @@ development:
   <<: *default
   database: Rails_Cards_development
   host: localhost
-  user: jehicoob
-  password: 1980
+  user: thinkpad
+  password: david
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,8 +62,8 @@ test:
   <<: *default
   database: Rails_Cards_test
   host: localhost
-  user: jehicoob
-  password: 1980
+  user: thinkpad
+  password: david
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -1,5 +1,6 @@
-%h1 New card
+.views
+  .views-title
+    = link_to image_tag("icons8-left.png"), deck_cards_path
+    %h3 New card
 
-= render 'form'
-
-= link_to 'Back', deck_cards_path
+  = render 'form'

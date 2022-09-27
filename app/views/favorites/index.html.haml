@@ -1,0 +1,11 @@
+.views
+  .views-title
+    %h3 Favorities
+    
+  .views-cont
+    - @decks.each do |deck|
+      .view-pre-card{ :style => "background: #{deck.deck_color};" }
+        %h3{:style => "color: #{deck.font_color};"}= deck.name
+        %p{:style => "color: #{deck.font_color};"}= deck.description
+        .pre-card-btn
+          = link_to 'Details', deck

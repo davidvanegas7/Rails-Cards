@@ -1,0 +1,174 @@
+.account {
+  margin-top: 80px;
+  padding: 30px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+  .account-titles {
+    width: 100%;
+    background: #b8e4f0;
+    padding: 0px 100px;
+    display: flex;
+
+    h3 {
+      padding: 30px;
+      color: #6e3cbc;
+      margin: 0;
+    }
+
+    a {
+      height: 100%;
+      border-radius: 50%;
+      margin: auto 0;
+
+      img {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin: auto 0;
+      }
+
+      &:hover {
+        background: white;
+      }
+    }
+  }
+
+  .account-cont {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .cont-photo {
+      width: 50%;
+
+      img {
+        border-radius: 50%;
+        width: 90%;
+      }
+    }
+
+    .cont-info {
+      width: 50%;
+
+      .info {
+        margin: 40px 0;
+
+        h3 {
+          border-radius: 10px;
+          text-align: center;
+          padding: 10px;
+          background: #e5e5e5;
+        }
+
+        input {
+          border-radius: 10px;
+          // text-align: center;
+          padding: 10px;
+          background: #e5e5e5;
+        }
+      }
+
+      .form-cont-buttons {
+        width: 100%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+
+        input {
+          border: 1px solid black;
+          padding: 10px;
+          margin: 10px;
+          border-radius: 10px;
+        }
+
+        input:hover {
+          background: #6e3cbc;
+          color: white;
+        }
+      }
+    }
+
+    .simple_form {
+      width: 100%;
+      display: flex;
+      margin-top: 30px;
+
+      .form-photo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        img {
+          border-radius: 50%;
+          width: 90%;
+        }
+      }
+
+      .form-info {
+        width: 50%;
+
+        .info {
+          margin: 40px 0;
+
+          h3 {
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            background: #e5e5e5;
+          }
+
+          input {
+            border-radius: 10px;
+            // text-align: center;
+            padding: 10px;
+            background: #e5e5e5;
+          }
+        }
+
+        .form-cont-buttons {
+          width: 100%;
+          margin: 30px 0;
+          display: flex;
+          justify-content: center;
+
+          input {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+          }
+
+          input:hover {
+            background: #6e3cbc;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .account-cont-buttons {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+
+    a {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    a:hover {
+      background: #6e3cbc;
+      color: white;
+    }
+  }
+}

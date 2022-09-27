@@ -1,26 +1,65 @@
-%p#notice= notice
+.views
 
-%p
-  %b Name:
-  = @deck.name
-%p
-  %b Description:
-  = @deck.description
-%p
-  %b Category:
-  = @deck.category
+  .views-title-show{:style => "background: #{@deck.deck_color};" }
 
-%p
-  %b Category:
-  = @deck.id
+    .image-title
+    
+      = link_to image_tag("icons8-left.png"), :back
+      %h1{:style => "color: #{@deck.font_color};"}= @deck.name
 
--# .cards-container
--#   = simple_form_for Card.new, url: deck_cards_path(deck_id: @deck.id) do |f|
--#     = f.input :question, label: false, placeholder: 'question', as: :string, input_html: { autocomplete: :off }
--#     = f.input :description, label: false, placeholder: 'description', as: :string, input_html: { autocomplete: :off }
+    %p{:style => "color: #{@deck.font_color};"}= @deck.description
 
-= link_to 'Add Card', new_deck_card_path(@deck)
-\|
-= link_to 'Edit', edit_deck_path(@deck)
-\|
-= link_to 'Back', decks_path
+  .cont-view-deck-options
+
+    .deck-options
+
+      .cont-deck
+
+        = image_tag "juego-de-cartas-black.png"
+        %p= "#{@card.length} Cards"
+
+      .cont-deck
+
+        = image_tag '', alt: '', height: '', width: '', class: ''
+        %p Qualification
+
+      .cont-deck.profile
+
+        - if @deck.owner.account.avatar.blank?
+          = image_tag url_for("https://robohash.org/#{current_user.email}")
+        - else
+          = image_tag url_for(@deck.owner.account.avatar)
+
+        %p= @deck.owner.account.username
+
+    .deck-options
+
+      .cont-deck.rigth
+
+        - if @deck.favorites.blank?
+          = link_to "Add to favorites", favorites_path(deck_id: @deck.id), method: :post
+          = image_tag 'Star-sinfav.png', alt: '', height: '', width: '', class: ''
+        - else 
+          = link_to "Remove to favorites", favorite_path(@deck.id), method: :delete
+          = image_tag 'Star-confav.png', alt: '', height: '', width: '', class: ''
+      
+      .cont-deck.rigth
+
+        %p Your score
+        = image_tag '', alt: '', height: '', width: '', class: ''
+
+      .cont-deck.rigth
+
+        %p Successful cards
+        = image_tag '', alt: '', height: '', width: '', class: ''
+
+  .cont-view-deck-btn
+
+    - if @card.nil?
+      = link_to 'Create Card', new_deck_card_path(@deck)
+    - else 
+      -# = link_to 'Start', deck_card_path(deck_code: @deck.code, id: @card.id)
+      = link_to 'Start', deck_game_path(deck_code: @deck.code)
+      = link_to 'Cards', deck_cards_path(deck_code: @deck.code)
+      
+    = link_to 'Edit', edit_deck_path(@deck)

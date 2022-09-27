@@ -77,3 +77,6 @@ rails g devise:views
 
 
 
+:string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean
+
+carrierwave gem

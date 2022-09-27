@@ -1,0 +1,55 @@
+.navbar-header
+
+  - unless user_signed_in? 
+    .navbar-name-logo
+      %h1 FlashCards
+  
+  = link_to root_path do
+    = image_tag 'juego-de-cartas.png', class: 'navbar-img-logo', width: 45, height: 40
+
+  - unless user_signed_in? 
+    .navbar-menu
+      = link_to "Conctacto"
+      = link_to "Descargar"
+    .navbar-buttons
+      = link_to "Create Account", new_user_registration_path, method: :get, class: 'navbar-boton-log' 
+      = link_to "Sign In", new_user_session_path, method: :get, class: 'navbar-boton-log'
+
+  - if user_signed_in?
+    .navbar-search
+      = image_tag 'icons8-busqueda-48.png', alt: '', height: '', width: '', class: ''
+      %input{:placeholder => "Buscar barajas", :type => "text"}
+
+    .navbar-options
+      -# - unless params.include?("/decks")
+      = link_to "Create Deck", new_deck_path, method: :get, class: 'navbar-boton-log'
+      
+      .navbar-profile
+    
+        .dropdown
+
+          %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            = image_tag (current_user.account.avatar), alt: '', height: '50', width: '50', class: 'profile-img'
+            %p= current_user.account.username
+
+          .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+
+            = link_to account_path(current_user), class: "dropdown-item" do
+              = image_tag 'usuario.png', alt: '', height: '', width: '', class: ''
+              %p Account
+            
+            = link_to edit_account_path(current_user), class: "dropdown-item" do
+              = image_tag 'configuraciones.png', alt: '', height: '', width: '', class: ''
+              %p Settings
+
+            = link_to decks_path, class: "dropdown-item" do
+              = image_tag 'juego-de-cartas.png', alt: '', height: '', width: '', class: ''
+              %p My Decks
+              
+            = link_to favorites_path, class: "dropdown-item" do
+              = image_tag 'Star 3.png', alt: '', height: '', width: '', class: ''
+              %p Favorites
+
+            = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
+              = image_tag 'icons8-cierre-de-sesión-redondeado-hacia-abajo-60.png', alt: '', height: '', width: '', class: ''
+              %p Cerrar Sección

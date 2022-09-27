@@ -1,3 +1,467 @@
 // Place all the styles related to the Decks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* HEADER -navbar */
+
+/* CONTENT */
+
+// .yrcards {
+//   width: 100%;
+//   height: 112px;
+//   margin-top: 110px;
+//   margin-bottom: 50px;
+//   background: #b8e4f0;
+// }
+
+// .yrcards h3 {
+//   font-weight: 700;
+//   font-size: 24px;
+//   line-height: 29px;
+//   padding-left: 100px;
+//   padding-top: 38px;
+//   color: #6e3cbc;
+// }
+
+// .your-cards {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   row-gap: 42px;
+//   column-gap: 28px;
+//   width: 1080px;
+//   margin: 0% auto;
+// }
+
+// .content-card {
+//   height: 180px;
+//   width: 280px;
+//   background-color: aquamarine;
+//   border-radius: 10px;
+//   padding: 30px;
+// }
+
+// .content-card h3 {
+//   font-family: system-ui, sans-serif, Arial, Helvetica;
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 22px;
+//   line-height: 27px;
+//   margin: 0%;
+//   color: #000000;
+// }
+
+// .content-card p {
+//   height: 90px;
+//   font-family: system-ui, sans-serif, Arial, Helvetica;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 24px;
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
+// .content-card a {
+//   // font-family: system-ui, sans-serif, Arial, Helvetica;
+//   // font-style: normal;
+//   // font-weight: 300;
+//   // font-size: 18px;
+//   // line-height: 22px;
+//   // text-decoration-line: underline;
+//   // color: rgba(0, 0, 0, 0.7);
+// }
+
+// // .content-card span {
+// //   display: flex;
+// //   align-items: center;
+// //   justify-content: space-between;
+// // }
+
+// // .content-card span p {
+// //   height: auto;
+// //   font-weight: 300;
+// //   font-size: 18px;
+// //   line-height: 22px;
+// // }
+
+// /* Estilo de los botones Show Cards y Start */
+
+// .cont-card-btn {
+//   display: flex;
+// }
+
+// .cont-card-btn a {
+//   padding: 7px;
+//   border-radius: 5px;
+//   text-decoration: none;
+//   margin: 0 auto;
+// }
+
+// .content-maker {
+//   height: 240px;
+//   width: 340px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: rgba(114, 103, 203, 0.6);
+//   border-radius: 10px;
+//   cursor: pointer;
+//   text-decoration: none;
+// }
+
+// // .content-maker div {
+// //   display: flex;
+// //   align-items: center;
+// //   padding-left: 24px;
+// // }
+
+// .content-maker h4 {
+//   font-weight: 700;
+//   font-size: 30px;
+//   // line-height: 27px;
+//   // width: 277px;
+//   // margin: 0%;
+
+//   // color: #ffffff;
+//   text-decoration: none;
+// }
+
+// .content-maker h4 a {
+//   text-decoration: none;
+// }
+
+// .content-maker img {
+//   height: 40px;
+//   padding-right: 10px;
+// }
+
+// /* CONTENT SEARCH - VISTA DE CARTAS DE UNA BARAJA */
+
+// .cont-view-deck {
+//   width: 100vw;
+//   height: 281px;
+//   margin-top: 110px;
+//   background: #e4dccb;
+//   padding: 30px 100px;
+// }
+
+// .cont-view-deck p {
+//   margin-top: 100px;
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
+// .cont-view-deck-options {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .deck-options {
+//   width: 30%;
+// }
+
+// .left {
+//   text-align: left;
+// }
+
+// .rigth {
+//   text-align: right;
+// }
+
+// .cont-view-deck-btn {
+//   display: flex;
+//   width: 30%;
+//   margin: 30px auto;
+// }
+
+// .cont-view-deck-btn a {
+//   border: 2px solid black;
+//   padding: 10px 50px;
+//   border-radius: 5px;
+//   text-decoration: none;
+//   margin: 0 auto;
+// }
+
+// /* VISTA PREVIA CARD */
+// /* CONTENT */
+
+// .content-game {
+//   margin-top: 110px;
+//   width: 100vw;
+//   height: calc(100vh - 110px);
+// }
+
+// .barra-progress {
+//   border-radius: 20px;
+//   width: 830px;
+//   height: 30px;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   background: #e5e5e5;
+//   border: 3px solid #7267cb;
+// }
+
+// .barra-progress div {
+//   width: 7%;
+//   height: 30px;
+//   border-radius: 20px;
+
+//   background-color: #7267cb;
+// }
+
+// .card-view {
+//   width: 100%;
+//   height: 340px;
+//   margin-top: 30px;
+//   z-index: -1;
+
+//   background: #59b74a;
+// }
+
+// .card-view img {
+//   position: absolute;
+//   right: 100px;
+//   max-height: 340px;
+// }
+
+// .card-view p {
+//   font-weight: 700;
+//   font-size: 32px;
+//   line-height: 39px;
+//   text-align: center;
+//   padding-top: 30px;
+
+//   color: #ffffff;
+// }
+
+// .card {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   // justify-content: space-between;
+//   // width: 922px;
+//   width: 50vw;
+//   // height: 394px;
+//   height: 50vh;
+//   margin-left: auto;
+//   margin-right: auto;
+//   z-index: 0;
+//   top: -230px;
+//   position: relative;
+//   border-radius: 10px;
+//   box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+//   background-color: #ffffff;
+// }
+
+// .card p {
+//   font-weight: 700;
+//   font-size: 24px;
+//   line-height: 29px;
+//   color: rgba(0, 0, 0, 0.33);
+// }
+
+// .card h2 {
+//   color: #525152;
+//   margin: auto;
+// }
+
+// .flip {
+//   position: relative;
+//   top: -200px;
+//   text-align: center;
+//   font-weight: 700;
+//   font-size: 24px;
+//   line-height: 29px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 12%;
+
+//   color: rgba(0, 0, 0, 0.33);
+// }
+
+// .flip:hover {
+//   color: #525152;
+// }
+
+// .points {
+//   width: 50%;
+//   position: relative;
+//   top: -200px;
+//   font-weight: 700;
+//   font-size: 20px;
+//   line-height: 24px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: #4a68b7;
+//   margin: 0 auto;
+// }
+
+// .points p {
+//   margin: 5px 15px;
+// }
+
+// .points ul {
+//   list-style: none;
+//   display: flex;
+//   padding: 0;
+//   align-items: center;
+// }
+
+// .points ul li {
+//   margin: 5px 12px;
+// }
+
+// .points ul li button:hover {
+//   color: rgba(255, 255, 255, 0.54);
+//   background: rgba(114, 103, 203, 0.6);
+// }
+
+// .points ul li button {
+//   background: #dadada;
+//   border-radius: 30px;
+//   padding: 6px 14px;
+//   outline: none;
+//   border: none;
+//   font-weight: 700;
+//   font-size: 24px;
+//   line-height: 29px;
+//   color: rgba(82, 81, 82, 0.5);
+// }
+
+// .card-view-button {
+//   position: absolute;
+//   right: 0;
+//   width: 70px;
+//   height: 70px;
+//   border-radius: 50%;
+//   background: #6e3cbc;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+// }
+
+// .card-view-button a {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .card-view-button a:hover {
+//   background: none;
+// }
+
+// .card-view-button img {
+//   width: 50%;
+//   height: 50%;
+// }
+
+// /* FOOTER */
+
+// .footer {
+//   margin-top: 100px;
+//   height: 300px;
+//   padding: 70px;
+//   background: rgba(114, 103, 203, 0.6);
+// }
+
+// /* CREATE DECK */
+
+// .cont-deck {
+//   width: 100vw;
+//   height: 100vh;
+//   background: gray;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .deck {
+//   width: 900px;
+//   height: 665px;
+//   border-radius: 10px;
+//   background: #fff;
+// }
+
+// /* CREATE CARD */
+
+// .cont-card {
+//   width: 100vw;
+//   height: 100vh;
+//   background: gray;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// // .card {
+// //   width: 900px;
+// //   height: 665px;
+// //   border-radius: 10px;
+// //   background: #fff;
+// // }
+
+// /* Estilos para el cuadro de vista para las cartas o una baraja */
+
+// .cont-view {
+//   margin-top: 100px;
+//   width: 100vw;
+// }
+
+// .cont-view-title {
+//   height: 112px;
+//   background: #b8e4f0;
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 50px;
+// }
+
+// .cont-view-title h1 {
+//   font-weight: 700;
+//   line-height: 29px;
+//   padding-left: 100px;
+//   color: #6e3cbc;
+// }
+
+// .cont-view-info {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   row-gap: 42px;
+//   column-gap: 28px;
+//   width: 1080px;
+//   margin: 0% auto;
+// }
+
+// .view-info-box {
+//   height: 180px;
+//   width: 280px;
+//   background-color: aquamarine;
+//   border-radius: 10px;
+//   padding: 30px;
+// }
+
+// .view-info-box h2 {
+//   margin: 0;
+//   color: #000000;
+// }
+
+// .view-info-box p {
+//   height: 90px;
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
+// /* Estilo de los botones Show Cards y Start */
+
+// .cont-card-btn {
+//   display: flex;
+// }
+
+// .cont-card-btn a {
+//   padding: 7px;
+//   border-radius: 5px;
+//   text-decoration: none;
+//   margin: 0 auto;
+// }

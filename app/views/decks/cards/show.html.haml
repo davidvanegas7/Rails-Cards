@@ -1,21 +1,45 @@
-%p#notice= notice
+-# = render 'decks/navbar'
 
-%p
-  %b Question:
-  = @card.question
-%p
-  %b Description:
-  = @card.description
-%p
-  %b Category:
+.content-game
+  -# %p#notice= notice
 
--# .cards-container
--#   = simple_form_for Card.new, url: card_cards_path(card_id: @card.id) do |f|
--#     = f.input :question, label: false, placeholder: 'question', as: :string, input_html: { autocomplete: :off }
--#     = f.input :description, label: false, placeholder: 'description', as: :string, input_html: { autocomplete: :off }
+  .card-view
+    %p= @deck.name
 
--# = link_to 'Add Card', new_card_card_path(@card)
--# \|
-= link_to 'Edit', edit_deck_card_path(@card)
-\|
-= link_to 'Back', deck_cards_path
+  .card
+    %p 
+      Question:
+    %h2= @card.question
+
+  .flip
+    Flip Card 
+
+  #points.points
+    %p No lo sabía
+    %ul
+      %li 1
+      %li 2
+      %li 3
+      %li 4
+      %li 5
+    %p Si lo sabía
+    .card-view-button
+      = link_to image_tag('flechas-a-la-derecha.png')
+
+
+  -# = link_to 'Edit', edit_deck_card_path(@card)
+  -# \|
+  -# = link_to 'Back', deck_path(code: @deck.code)
+
+
+    <div class="points">
+        <p>No lo sabía</p>
+        <ul>
+            <li><button>1</button></li>
+            <li><button>2</button></li>
+            <li><button>3</button></li>
+            <li><button>4</button></li>
+            <li><button>5</button></li>
+        </ul>
+        <p>Sí lo sabía</p>
+    </div>

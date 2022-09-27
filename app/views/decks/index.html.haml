@@ -1,25 +1,15 @@
-%h1 Listing decks
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Category
-      %th
-      %th
-      %th
-
-  %tbody
+.views
+  .views-title
+    %h3 Tus Barajas
+    
+  .views-cont
     - @decks.each do |deck|
-      %tr
-        %td= deck.name
-        %td= deck.description
-        %td= deck.category
-        %td= link_to 'Show', deck
-        %td= link_to 'Edit', edit_deck_path(deck)
-        %td= link_to 'Destroy', deck, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Deck', new_deck_path
+      .view-pre-card{ :style => "background: #{deck.deck_color};" }
+        %h3{:style => "color: #{deck.font_color};"}= deck.name
+        %p{:style => "color: #{deck.font_color};"}= deck.description
+        .pre-card-btn
+          = link_to 'Details', deck
+          -# = link_to 'Edit', edit_deck_path(deck)
+        -# = link_to 'Destroy', deck, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .cont-maker
+      = link_to 'New Deck', new_deck_path

@@ -1,7 +1,6 @@
-%h1 Editing deck
+.views
+  .views-title
+    = link_to image_tag("icons8-left.png"), decks_path
+    %h3 Editing deck
 
-= render 'form'
-
-= link_to 'Show', @deck
-\|
-= link_to 'Back', decks_path
+  = render 'form'

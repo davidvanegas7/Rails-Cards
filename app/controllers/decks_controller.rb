@@ -1,28 +1,29 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: %i[ show edit update destroy ]
 
-  # GET /decks or /decks.json
+  before_action :authenticate_user! 
+  
+  before_action :set_deck, only: %i[ show edit update destroy game]
+
+  before_action :set_category, only: %i[ show ]
+
   def index
-    @decks = Deck.all
+    @decks = Deck.where(owner_id: current_user)
   end
 
-  # GET /decks/1 or /decks/1.json
   def show
+    @card = Card.where(deck_id: @deck.id)
   end
 
-  # GET /decks/new
   def new
     @deck = Deck.new
   end
 
-  # GET /decks/1/edit
   def edit
   end
 
-  # POST /decks or /decks.json
   def create
     @deck = Deck.new(deck_params)
-    @deck.owner = current_user 
+    @deck.owner = current_user
     respond_to do |format|
       if @deck.save
         format.html { redirect_to deck_url(@deck), notice: "Deck was successfully created." }
@@ -34,7 +35,6 @@ class DecksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /decks/1 or /decks/1.json
   def update
     respond_to do |format|
       if @deck.update(deck_params)
@@ -47,7 +47,6 @@ class DecksController < ApplicationController
     end
   end
 
-  # DELETE /decks/1 or /decks/1.json
   def destroy
     @deck.destroy
 
@@ -57,14 +56,21 @@ class DecksController < ApplicationController
     end
   end
 
+  def game
+
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_deck
-      @deck = Deck.find(params[:id])
+      @deck = Deck.find_by_code(params[:code] ||= params[:deck_code])
     end
 
-    # Only allow a list of trusted parameters through.
+    def set_category
+      @category = Category.find_by_id(@deck.category_id)
+    end
+
     def deck_params
-      params.require(:deck).permit(:name, :description, :category_id)
+      params.require(:deck).permit(:name, :description, :category_id, :deck_color, :font_color)
     end
 end

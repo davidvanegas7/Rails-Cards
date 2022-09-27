@@ -1,0 +1,35 @@
+.views
+  .view-game
+
+    .barra-progres
+
+    .game-header{:style => "background: #{@deck.deck_color};" }
+      %h2{:style => "color: #{@deck.font_color};"}= @deck.name
+
+    .game-content
+      .content
+        .front.box{ id: "game-front" }
+          %p Question
+          %h2 Pregunta***
+          %p 1/24
+        .back.box{ id: "game-back" }
+          %p Answer
+          %h2 Respuesta***
+          %p 1/24
+
+    .game-footer 
+      = button_tag "Flip Card", class:"clase", id: "flip-card-button"
+
+      .footer-points{id: "set-score"}
+        %p ¿Como te fue?
+
+        .cont-point
+          %p Lo sabia
+          %ul.cont-points
+            %li.points{value: "1"} 1
+            %li.points{value: "2"} 2
+            %li
+              %button.points{value: "3"} 3
+          %p No lo sabia
+
+= javascript_pack_tag 'game'

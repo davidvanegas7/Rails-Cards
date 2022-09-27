@@ -1,25 +1,22 @@
-%h1 Listing cards
+.views
+  .views-title{:style => "background: #{@deck.deck_color}"}
+    = link_to image_tag("icons8-left.png"), @deck
+    %h3{:style => "color: #{@deck.font_color};"}= "Cartas de #{@deck.name}" 
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Category
-      %th
-      %th
-      %th
-
-  %tbody
+  .views-cont
     - @cards.each do |card|
-      %tr
-        %td= card.name
-        %td= card.description
-        %td= card.category
-        %td= link_to 'Show', card
-        %td= link_to 'Edit', edit_card_path(card)
-        %td= link_to 'Destroy', card, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .view-pre-card
+        %h2= card.question
+        %p= card.description 
+        .pre-card-btn
+          = link_to 'Details'
+          = link_to 'Edit'
+        -#  = link_to "Details", deck_card_path(deck_code: @deck.code, id: card.id)
+    .cont-maker
+      = link_to 'New Card', new_deck_card_path(@deck)
 
-%br
-
-= link_to 'New card', new_card_path
+-# = link_to 'Add Card', new_deck_card_path(@deck)
+\|
+= link_to 'Edit', edit_deck_path(@deck)
+\|
+= link_to 'Back', decks_path

@@ -1,0 +1,29 @@
+.account-cont
+
+  = simple_form_for(@account) do |f|
+
+    .form-photo
+
+      - if @account.avatar.blank?
+        = image_tag url_for("https://robohash.org/#{current_user.email}")
+      - else
+        = image_tag url_for(@account.avatar)      
+
+      = f.file_field :avatar
+    
+    .form-info
+      .info
+        %p Username:
+        = f.input :username, label: false
+
+      .info 
+        %p Nickname:
+        = f.input :nickname, label: false
+
+      .info
+        %p Birth:
+        = f.date_select :birth, label: false
+      
+      .form-cont-buttons
+        = f.button :submit
+    

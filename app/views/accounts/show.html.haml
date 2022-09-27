@@ -1,0 +1,31 @@
+.account
+  .account-titles
+    %h3 Account 
+
+  .account-cont
+    .cont-photo
+      - if @account.avatar.blank?
+        = image_tag url_for("https://robohash.org/#{current_user.email}")
+      - else
+        = image_tag url_for(@account.avatar)
+      
+    .cont-info
+      .info
+        %p Username:
+        %h3= @account.username.nil? ? "--" : @account.username 
+
+      .info
+        %p Nickname:
+        %h3= @account.nickname.nil? ? "--" : @account.nickname
+
+      .info
+        %p Birth:
+        %h3= @account.birth.nil? ? "--" : @account.birth
+
+      .info
+        %p Email:
+        %h3= current_user.email
+
+  .account-cont-buttons
+    = link_to "Edit Account", edit_account_path(id: @account.id)
+    = link_to "Change Email / Password", edit_user_registration_path
