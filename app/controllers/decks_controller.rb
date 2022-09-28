@@ -57,7 +57,7 @@ class DecksController < ApplicationController
   end
 
   def game
-
+    @cards = Card.where(deck_id: @deck.id)
   end
 
   private
