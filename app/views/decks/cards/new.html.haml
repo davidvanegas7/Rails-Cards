@@ -3,4 +3,4 @@
     = link_to image_tag("icons8-left.png"), deck_cards_path
     %h3 New card
 
-  = render 'form'
+  = render 'form', url: deck_cards_path(deck_id: @deck.id)

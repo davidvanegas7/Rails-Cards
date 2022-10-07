@@ -50,8 +50,8 @@
       }
 
       .back {
-        transition: all 0.3s linear;
         transform: rotateY(180deg);
+        transition: all 0.3s linear;
       }
     }
 

@@ -18,7 +18,7 @@ class Deck < ApplicationRecord
   belongs_to :category
   belongs_to :owner, class_name: "User"
 
-  has_many :cards
+  has_many :cards, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
   validates :name, :description, presence: true

@@ -1,7 +1,6 @@
-%h1 Editing card
-
-= render 'form'
-
-= link_to 'Show', @card
-\|
-= link_to 'Back', cards_path
+.views
+  .views-title
+    = link_to image_tag("icons8-left.png"), deck_cards_path
+    %h3 Editing card
+  
+  = render 'form', url: deck_card_path(deck_code: @deck.code, id: @card.id)

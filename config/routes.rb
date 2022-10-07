@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :scores, only: %i[ get_cards update get_score ]
+
+  get "/get_cards" => "scores#get_cards"
+  get "/get_score" => "scores#get_score"
+
   resources :favorites, only: %i[ index create destroy ], param: :deck_id
 
   resources :categories

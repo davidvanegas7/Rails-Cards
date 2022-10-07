@@ -7,7 +7,7 @@
       %h2{:style => "color: #{@deck.font_color};"}= @deck.name
 
 
-    = content_tag :div, class: "game-content", data: {cards: @cards} do
+    = content_tag :div, class: "game-content", data: {deck: @deck.code} do
       .content
         .front.box{ id: "game-front" }
           %p Question
@@ -19,20 +19,20 @@
           %p.game-cards
 
     .game-footer 
-      = button_tag "Flip Card", class:"clase", id: "flip-card-button"
+      = button_tag "Flip Card", class:"flip-card", id: "flip-card-button"
 
       .footer-points{id: "set-score"}
         %p ¿Como te fue?
 
         .cont-point
-          %p Lo sabia
+          %p No lo sabia
           %ul.cont-points
             %li.points{value: "1"} 1
             %li.points{value: "2"} 2
             %li.points{value: "3"} 3
             %li.points{value: "4"} 4
             %li.points{value: "5"} 5
-          %p No lo sabia
+          %p Lo sabia
         
         .next-card
           = image_tag 'flechas-a-la-derecha.png', alt: '', height: '', width: '', class: ''

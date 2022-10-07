@@ -1,6 +1,6 @@
 <div class="log-container">
   <div class="log-content">
-    <%= link_to image_tag("cerrar.png"), :back, class: "close" %>
+    <%= link_to image_tag("cerrar.png"), root_path, class: "close" %>
     <span class="log-title">
       <h3>FlashCards</h3>
       <%= image_tag 'juego-de-cartas-purple.png', alt: 'logo', height: '40', width: '40', class: '' %>
@@ -26,7 +26,7 @@
         </div>
       <% end %> 
       <%= render "devise/shared/links" %>
-      <%= image_tag 'Group 4.png' %>
+      <%# <%= image_tag 'Group 4.png' %>
     </div>
   </div>
 </div>

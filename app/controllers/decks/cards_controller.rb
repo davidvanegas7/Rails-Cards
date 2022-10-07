@@ -2,14 +2,12 @@ class Decks::CardsController < ApplicationController
 
   before_action :set_card, only: %i[show edit update destroy]
   before_action :set_deck
-  # before_action :set_card, only: %i[show edit update destroy]
 
   def index
     @cards = Card.where(deck_id: @deck.id)
   end
 
   def show
-
   end
 
   def new
@@ -25,20 +23,20 @@ class Decks::CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to deck_card_url(deck_id: @deck.id, id: @card.id), notice: "Card was successfully created." }
+        format.html { redirect_to deck_cards_url(deck_id: @deck.id), notice: "Card was successfully created." }
         format.json { render :show, status: :created, location: @card }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @card.errors, status: :unprocessable_entity }
       end
-    end/channel/UCB-rsRcOHnuCRFugLw7XUug
+    end
 
   end
 
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to deck_card_url(deck_id: @deck.id, id: @card.id), notice: "Card was successfully updated." }
+        format.html { redirect_to deck_cards_url(deck_code: @deck.code), notice: "Card was successfully updated." }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,13 +49,9 @@ class Decks::CardsController < ApplicationController
     @card.destroy
 
     respond_to do |format|
-      format.html { redirect_to cards_url, notice: "Card was successfully destroyed." }
+      format.html { redirect_to deck_cards_url(deck_code: @deck.code), notice: "Card was successfully destroyed." }
       format.json { head :no_content }
     end
-  end
-
-  def game
-    
   end
 
   private

@@ -19,6 +19,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :decks
+  has_many :scores
   has_many :favorites, dependent: :destroy 
   has_one :account, dependent: :destroy
 

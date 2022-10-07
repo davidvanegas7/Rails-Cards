@@ -11,7 +11,7 @@
         = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
         = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %body
-        - unless request.path.include?("sign_in")
+        - unless request.path.include?("sign_in") || request.path.include?("sign_up") || request.path.include?("game")
             = render partial: 'partials/navbar'
         
         = yield

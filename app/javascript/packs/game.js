@@ -1,61 +1,110 @@
-const cards = JSON.parse(document.querySelector(".game-content").dataset.cards);
-console.log(cards);
+const { data } = require("jquery");
 
-var question = document.getElementById("game-question");
-var description = document.getElementById("game-answer");
-var card_number = document.querySelectorAll(".game-cards");
+var deck_code = $(".game-content").data("deck");
+var question = $("#game-question");
+var answer = $("#game-answer");
+var card_number = $(".game-cards");
 
-var card = 1;
-var position = 0;
+var cards;
+var current_card = 1;
+var score;
 
-window.onload = function () {
-  question.textContent = cards[position].question;
-  description.textContent = cards[position].description;
-  card_number.forEach((number) => {
-    number.textContent = card + "/" + cards.length;
+(function (window, undefined) {
+  $.ajax({
+    url: "/get_cards",
+    type: "get",
+    async: false,
+    data: { deck_code: deck_code },
+  }).done(function (data) {
+    cards = data;
   });
-};
 
-// ------------------------------------------------------------------------------------------------------------------------
+  question.text(`${cards[current_card - 1].question}`);
+  answer.text(`${cards[current_card - 1].description}`);
+  card_number.text(`${current_card} / ${cards.length}`);
+})(window);
 
-const flip = document.getElementById("flip-card-button");
-const set_score = document.getElementById("set-score");
-const front = document.getElementById("game-front");
-const back = document.getElementById("game-back");
+$(".view-game").on("click", ".flip-card", showBack);
 
-flip.addEventListener("click", () => {
-  flip.style.display = "none";
-  set_score.style.display = "block";
-  front.style.transform = "rotateY(180deg)";
-  back.style.transform = "rotateY(360deg)";
+$(".view-game").on("click", ".points", function () {
+  $(".points").prop("disabled", true);
+  let points = this.value;
+  score = getScore(cards[current_card - 1].id);
+
+  plays = score.plays + 1;
+  sum_total = calcSuma(points, score.sum_total);
+  prom = calcProm(sum_total, plays);
+
+  $.ajax({
+    url: `/scores/${score.id}`,
+    type: "patch",
+    data: {
+      score_id: score.id,
+      score: {
+        sum_total: sum_total,
+        plays: plays,
+        prom: prom,
+      },
+    },
+  }).done(function (data) {
+    console.log("Saved!");
+  });
+
+  $(".next-card").show();
 });
 
-// ------------------------------------------------------------------------------------------------------------------------
+$(".view-game").on("click", ".next-card", function () {
+  $(".points").prop("disabled", false);
+  if (current_card < cards.length) {
+    current_card += 1;
 
-const scores = document.querySelectorAll(".points");
-const next = document.querySelector(".next-card");
+    question.text(`${cards[current_card - 1].question}`);
+    answer.text(`${cards[current_card - 1].description}`);
+    card_number.text(`${current_card} / ${cards.length}`);
 
-var select = false;
-console.log(select);
-
-scores.forEach((score) => {
-  score.addEventListener("click", (e) => {
-    if (!select) {
-      next.style.display = "block";
-      select = true;
-    } else {
-      alert("Ya puntuaste!!");
-    }
-  });
-});
-
-next.addEventListener("click", () => {
-  if (position < cards.length - 1) {
-    console.log(position);
-    position++;
+    reset();
   } else {
-    console.log(position);
-    alert("Aca va a ir la renderizacion de la puntuacion");
-    // console.log("llegaste al final" + cards.length);
+    alert("Cartas terminadas!!");
+    window.location.href = `http://localhost:3000/decks/${deck_code}`;
   }
 });
+
+function showBack() {
+  $("#flip-card-button").hide();
+  $("#set-score").show();
+  $("#game-front").css("transform", "rotateY(180deg)");
+  $("#game-back").css("transform", "rotateY(360deg)");
+}
+
+function reset() {
+  $("#flip-card-button").show();
+  $("#set-score").hide();
+  $(".next-card").hide();
+  $("#game-front").css("transform", "rotateY(0deg)");
+  $("#game-back").css("transform", "rotateY(180deg)");
+}
+
+function getScore(card_id) {
+  var result;
+  $.ajax({
+    url: "/get_score",
+    type: "get",
+    async: false,
+    data: { card_id: card_id },
+  }).done(function (data) {
+    result = data;
+  });
+  return result;
+}
+
+function calcSuma(points, sum_total) {
+  var res;
+  res = points + sum_total;
+  return res;
+}
+
+function calcProm(sum_total, plays) {
+  var res;
+  res = sum_total / plays;
+  return res;
+}

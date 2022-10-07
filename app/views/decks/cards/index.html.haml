@@ -1,7 +1,7 @@
 .views
   .views-title{:style => "background: #{@deck.deck_color}"}
     = link_to image_tag("icons8-left.png"), @deck
-    %h3{:style => "color: #{@deck.font_color};"}= "Cartas de #{@deck.name}" 
+    %h3{:style => "color: #{@deck.font_color};"}= "Cards from #{@deck.name}"
 
   .views-cont
     - @cards.each do |card|
@@ -9,14 +9,8 @@
         %h2= card.question
         %p= card.description 
         .pre-card-btn
-          = link_to 'Details'
-          = link_to 'Edit'
-        -#  = link_to "Details", deck_card_path(deck_code: @deck.code, id: card.id)
+          = link_to 'Edit', edit_deck_card_path(deck_code: @deck.code, id: card.id)
+          = link_to 'Delete', deck_card_path(deck_code: @deck.code, id: card.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
     .cont-maker
       = link_to 'New Card', new_deck_card_path(@deck)
-
--# = link_to 'Add Card', new_deck_card_path(@deck)
-\|
-= link_to 'Edit', edit_deck_path(@deck)
-\|
-= link_to 'Back', decks_path

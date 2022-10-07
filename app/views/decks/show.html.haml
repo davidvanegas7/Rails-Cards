@@ -4,7 +4,7 @@
 
     .image-title
     
-      = link_to image_tag("icons8-left.png"), :back
+      = link_to image_tag("icons8-left.png"), decks_path 
       %h1{:style => "color: #{@deck.font_color};"}= @deck.name
 
     %p{:style => "color: #{@deck.font_color};"}= @deck.description

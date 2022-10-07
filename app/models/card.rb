@@ -14,5 +14,14 @@ class Card < ApplicationRecord
   belongs_to :deck
   belongs_to :user
 
+  has_one :score, dependent: :destroy
+
   validates :question, :description, presence: true
+
+  # after_create :set_score
+
+  # def set_score
+  #   self.score = Score.create()
+  # end
+
 end

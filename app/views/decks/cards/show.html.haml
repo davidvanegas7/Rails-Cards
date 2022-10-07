@@ -1,30 +1,8 @@
--# = render 'decks/navbar'
+-# .views
+-#   .views-title
+-#     = link_to image_tag("icons8-left.png"), deck_cards_path
+-#     %h3= @card.question
 
-.content-game
-  -# %p#notice= notice
-
-  .card-view
-    %p= @deck.name
-
-  .card
-    %p 
-      Question:
-    %h2= @card.question
-
-  .flip
-    Flip Card 
-
-  #points.points
-    %p No lo sabía
-    %ul
-      %li 1
-      %li 2
-      %li 3
-      %li 4
-      %li 5
-    %p Si lo sabía
-    .card-view-button
-      = link_to image_tag('flechas-a-la-derecha.png')
 
 
   -# = link_to 'Edit', edit_deck_card_path(@card)

@@ -9,7 +9,6 @@
         %p{:style => "color: #{deck.font_color};"}= deck.description
         .pre-card-btn
           = link_to 'Details', deck
-          -# = link_to 'Edit', edit_deck_path(deck)
-        -# = link_to 'Destroy', deck, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          = link_to 'Delete', deck, :method => :delete, :data => { :confirm => 'All cards will be removed, are you sure?' }
     .cont-maker
       = link_to 'New Deck', new_deck_path

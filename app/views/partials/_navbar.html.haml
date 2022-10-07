@@ -21,8 +21,10 @@
       %input{:placeholder => "Buscar barajas", :type => "text"}
 
     .navbar-options
-      -# - unless params.include?("/decks")
-      = link_to "Create Deck", new_deck_path, method: :get, class: 'navbar-boton-log'
+      - unless request.path.include?("cards")
+        = link_to "Create Deck", new_deck_path, method: :get, class: 'navbar-boton-log'
+      - if request.path.include?("cards")
+        = link_to "Create Card", new_deck_card_path, method: :get, class: 'navbar-boton-log'
       
       .navbar-profile
     
@@ -52,4 +54,4 @@
 
             = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
               = image_tag 'icons8-cierre-de-sesión-redondeado-hacia-abajo-60.png', alt: '', height: '', width: '', class: ''
-              %p Cerrar Sección
+              %p Sign off

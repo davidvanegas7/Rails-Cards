@@ -12,6 +12,7 @@ class DecksController < ApplicationController
 
   def show
     @card = Card.where(deck_id: @deck.id)
+    
   end
 
   def new
