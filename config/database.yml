@@ -24,9 +24,9 @@ default: &default
 development:
   <<: *default
   database: Rails_Cards_development
-  host: localhost
-  user: thinkpad
-  password: david
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,9 +61,9 @@ development:
 test:
   <<: *default
   database: Rails_Cards_test
-  host: localhost
-  user: thinkpad
-  password: david
+  host: <%= ENV["DATABASE_HOST"] %>
+  user: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,4 +89,6 @@ production:
   <<: *default
   database: Rails_Cards_production
   username: Rails_Cards
-  password: <%= ENV['RAILS_CARDS_DATABASE_PASSWORD'] %>
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
