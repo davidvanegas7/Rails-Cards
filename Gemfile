@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 #! GEMAS ADICIONADAS
-gem 'net-smtp'
+gem 'net-smtp', require: false
 # gem install haml
 gem 'hamlit'
 gem "simple_form"
