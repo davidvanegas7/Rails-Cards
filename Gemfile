@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 #! GEMAS ADICIONADAS
 gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 # gem install haml
 gem 'hamlit'
 gem "simple_form"
