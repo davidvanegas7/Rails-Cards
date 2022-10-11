@@ -31,7 +31,6 @@
         .dropdown
 
           %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-            = image_tag (current_user.account.avatar), alt: '', height: '50', width: '50', class: 'profile-img'
             %p= current_user.account.username
 
           .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
